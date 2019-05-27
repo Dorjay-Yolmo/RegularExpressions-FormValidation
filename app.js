@@ -16,7 +16,7 @@ function validateName() {
 
 function validateZip() {
   const zip = document.getElementById('zip');
-  const re = /^[a-zA-Z]{2,10}$/;
+  const re = /^[0-9]{5}[0-9]?$/;
   if (!re.test(zip.value)) {
     zip.classList.add('is-invalid');
   } else {
@@ -25,9 +25,21 @@ function validateZip() {
 }
 
 function validateEmail() {
-
+  const email = document.getElementById('email');
+  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+  if (!re.test(email.value)) {
+    email.classList.add('is-invalid');
+  } else {
+    email.classList.remove('is-invalid');
+  }
 }
 
 function validatePhone() {
-
+  const phone = document.getElementById('phone');
+  const re = /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/;
+  if (!re.test(phone.value)) {
+    phone.classList.add('is-invalid');
+  } else {
+    phone.classList.remove('is-invalid');
+  }
 }
